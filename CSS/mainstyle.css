@@ -36,6 +36,17 @@ a {
     color: inherit;
 }
 
+section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    padding: 6rem 4rem 1rem;
+    margin: 0 auto;
+}
+
 
 
 /*----NAVBAR STYLING----*/
@@ -130,20 +141,13 @@ ul.nav-links li a:hover {
 
 
 
+
 /*----HOME PAGE STYLING----*/
 
 
 
 #home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 8rem 2rem 1rem;
-    position: relative;
-    flex-basis: 100%;
-    flex-basis: 100%;
+    gap: 0;
 }
 
 .avatar {
@@ -156,7 +160,8 @@ ul.nav-links li a:hover {
     box-shadow: 6px 6px 10px rgba(0,0,0,0.5);
     animation: 
         zoomIn 4s ease forwards, 
-        float 3s ease-in-out infinite;  
+        float 3s ease-in-out infinite;
+    margin-top: 1rem;
 }
 
 @keyframes zoomIn {
@@ -238,6 +243,14 @@ ul.nav-links li a:hover {
     font-size: 0.80rem;
     border-bottom: 3px solid rgb(255, 128, 181);
     font-weight: bold;
+    white-space: nowrap;
+}
+
+.intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .intro h2 {
@@ -269,6 +282,7 @@ ul.nav-links li a:hover {
 
 .intro p {
     max-width: 900px;
+    text-align: center;
     margin: 1rem auto;
     line-height: 1.8;
     font-size: 0.85rem;
@@ -299,16 +313,6 @@ ul.nav-links li a:hover {
 /*----ABOUT PAGE STYLING----*/
 
 
-
-#about {
-    position: relative;
-     max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-    padding: 6rem 4rem 1rem;
-}
 
 #about h1 {
     font-size: 2.5rem;
@@ -435,18 +439,6 @@ ul.nav-links li a:hover {
 
 
 
-#services {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 6rem 4rem 1rem;
-    margin: 0 auto;
-}
-
-
 #services h2 {
     font-size: 2rem;
     font-weight: 700;
@@ -524,19 +516,7 @@ ul.nav-links li a:hover {
 /*----SKILL PAGE STYLING----*/
 
 
-
-#skills {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 6rem 4rem 1rem;
-    margin: 0 auto; 
-}
-
-    
+ 
 #skills h2 {
     font-size: 2rem;
     font-weight: 700;
@@ -704,17 +684,6 @@ ul.nav-links li a:hover {
 
 
 
-#portfolio {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 6rem 4rem 1rem;
-    margin: 0 auto; 
-}
-
 #portfolio h2 {
     font-size: 2rem;
     font-weight: 700;
@@ -816,17 +785,6 @@ ul.nav-links li a:hover {
 
 
 
-#contact {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    padding: 6rem 4rem 4rem;
-    margin: 0 auto; 
-}
-
 #contact h2 {
     font-size: 2rem;
     font-weight: 700;
@@ -843,7 +801,7 @@ form {
     justify-content: center;
     align-items: flex-start;
     gap: 1rem;
-    min-width: 29rem;
+    min-width: 40rem;
 }
 
 label {
@@ -909,13 +867,13 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    padding: 2rem 4rem;
-    margin: auto;
+    padding: 2rem 4rem;   
     font-weight: 600;
     font-size: 0.9rem;
     background: rgba(255, 255, 255, 0.80);
     backdrop-filter: blur(10px);
     box-shadow: 0px -4px 6px rgb(122, 121, 121);
+    width: 100%;
 }
 
 
@@ -924,67 +882,87 @@ footer {
 
 
 @media (max-width: 768px) {
+    
+    section {
+        padding: 3rem 1rem;
+    }
+
+
     nav.navbar {
-    padding: 1rem 1.5rem;   
+        padding: 1rem 2em;   
     }
 
     .logo {
-        font-size: 1.3rem;
-        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        padding: 0.4rem 1rem;
     }
 
 
     #menu-toggle {
-    display: block;
-  }
+        display: block;
+    }
 
-  .nav-links {
-    position: fixed;
-    top: 100%;
-    right: -100%;
-    height: 70vh;
-    width: 70%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.5);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-    transition: right 0.4s ease;
-  }
+    .nav-links {
+        position: fixed;
+        top: 100%;
+        right: -100%;
+        height: 55vh;
+        width: 40%;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: -2px 2px 8px rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+        transition: right 0.4s ease;
+    }
 
-  .nav-links.open {
-    right: 0;
-  }
+    .nav-links.open {
+        right: 0;
+    }
 
-  .nav-links li a {
-    font-size: 1.1rem;
-    padding: 0.8rem;
-  }
+    .nav-links li a {
+        font-size: 1.1rem;
+        padding: 0.8rem;
+    }
 
-  .about-text,
-  .work-history,
-  .edu-history {
-    flex-direction: column;
-  }
+    .about-text,
+    .work-history,
+    .edu-history {
+        flex-direction: column;
+    }
 
-  .about-text .main-text,
-  .work-history .main-text,
-  .edu-history .main-text {
-    flex-basis: 100%;
-  }
+    .about-text .main-text,
+    .work-history .main-text,
+    .edu-history .main-text {
+        flex-basis: 100%;
+    }
 
-  .about-title {
-    text-align: center;
-  }
+    .about-title {
+        text-align: center;
+    }
 
-  .past-cards {
-    display: flex;
-    flex-direction: column;
-    flex-basis: 100%;
-    gap: 2rem;
-  }
+    .past-cards {
+        display: flex;
+        flex-direction: column;
+        flex-basis: 100%;
+        gap: 2rem;
+    }
+
+
+    form {
+        min-width: 100%;
+        padding: 0 1rem;
+        align-items: stretch;
+    }
+
+    form input,
+    form textarea {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
 
 }
